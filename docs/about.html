@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="icon" href="./img/icon.png" />
+        <title>Rob Thomas - Visual Designer</title>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-sm-5">
+            <div class="container-fluid"> <a class="navbar-brand fs-4 fw-bold text-uppercase" href="#">Rob Thomas <span class="slash">Creative</span></a>
+
+                <button
+                class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+
+                    </button>
+                    <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav fs-6 fw-bold text-uppercase"> <a class="nav-link active" aria-current="page" href="#">Intro</a>
+ <a class="nav-link"
+                            href="#">Work</a>
+ <a class="nav-link" href="#">Experience</a>
+ <a class="nav-link"
+                            href="#">Contact</a>
+ <a class="nav-link" href="#">Resume</a>
+
+                        </div>
+                    </div>
+            </div>
+        </nav>
+        <div class="jumbotron pt-5 pb-5 bg-white text-center justify-content-center align-items-center mb-0">
+            <div class="container">
+                 <h1 class="display-3">About</h1>
+
+                <p class="lead">Basic5 is a responsive A Bootstrap 5 Boilerplate with Gulp, Sass, BrowserSync.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" src="https://images.unsplash.com/photo-1579032365451-d20e00c0ed23?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-fluid" src="https://images.unsplash.com/photo-1579032365437-9f9d275b0db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-fluid" src="https://images.unsplash.com/photo-1579033060982-1bb5b083f4fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+                </div>
+            </div>
+        </div>
+        <footer class="footer container text-center">
+            <p>&copy; Bootstrap Basic5 Starter with Gulp</p>
+        </footer>
+        <script src="./js/all.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+        <script>
+            /*
+            var $pic = document.querySelectorAll('[class^="pic"]');
+            
+            
+            gsap.from($pic, {duration: 0.3, ease: "power5.out", x: -500, stagger: 0.10, scrollTrigger: ".trigger", // start the animation when ".box" enters the viewport (once)
+              x: 500});
+            */
+            
+            
+            
+            
+              // Detect if a link's href goes to the current page
+            function getSamePageAnchor (link) {
+              if (
+                link.protocol !== window.location.protocol ||
+                link.host !== window.location.host ||
+                link.pathname !== window.location.pathname ||
+                link.search !== window.location.search
+              ) {
+                return false;
+              }
+            
+              return link.hash;
+            }
+            
+            // Scroll to a given hash, preventing the event given if there is one
+            function scrollToHash(hash, e) {
+              const elem = hash ? document.querySelector(hash) : false;
+              if(elem) {
+                if(e) e.preventDefault();
+                gsap.to(window, {scrollTo: elem});
+              }
+            }
+            
+            // If a link's href is within the current page, scroll to it instead
+            document.querySelectorAll('a[href]').forEach(a => {
+              a.addEventListener('click', e => {
+                scrollToHash(getSamePageAnchor(a), e);
+              });
+            });
+            
+            // Scroll to the element in the URL's hash on load
+            scrollToHash(window.location.hash);
+            
+            
+            
+            
+            
+            
+            gsap.from(".card", {scrollTrigger: ".trigger", scale: 0.10}, {duration: 1, scale: 3, ease: "expoScale(0.5, 3, power2.inOut)"});
+            
+            
+            
+            gsap.from(".scroll-icon", {scrollTrigger: "hero", duration: 2, ease: "bounce", y: 50});
+            
+            
+            gsap.from(".rmt-pic", {duration: 2, ease: "bounce", y: 50,  scrollTrigger: ".intro2"});
+            
+            
+            
+            
+            /*
+            
+              $('.card[data-card-id="1"]').hover(
+              function() {
+                  TweenMax.to(".zpic", .5, {css: {scaleX: 2.2, scaleY: 2.2},ease: Circ.easeOut});
+              }, function() {
+                  TweenMax.to(".zpic", .5, {css: {scaleX: 1, scaleY: 1},ease: Circ.easeOut});
+              });
+            
+            */
+        </script>
+    </body>
+
+</html>

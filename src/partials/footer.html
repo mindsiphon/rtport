@@ -1,5 +1,5 @@
 <footer class="footer container text-center">
-    <p>&copy; Bootstrap Basic5 Starter with Gulp</p>
+    <p>Rob Thomas Creative</p>
 </footer>
 <script src="./js/all.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
@@ -8,19 +8,6 @@
 
 
 <script>
-
-
-
-/*
-var $pic = document.querySelectorAll('[class^="pic"]');
-
-
-gsap.from($pic, {duration: 0.3, ease: "power5.out", x: -500, stagger: 0.10, scrollTrigger: ".trigger", // start the animation when ".box" enters the viewport (once)
-  x: 500});
-*/
-
-
-
 
   // Detect if a link's href goes to the current page
 function getSamePageAnchor (link) {
@@ -55,35 +42,44 @@ document.querySelectorAll('a[href]').forEach(a => {
 // Scroll to the element in the URL's hash on load
 scrollToHash(window.location.hash);
 
+//Project Cards
 
+gsap.from(".card", {scrollTrigger: ".card", scale: 0.10, null: 100, stagger: 0.1}, {duration: 1, scale: 3, ease: "expoScale(0.5, 3, power2.inOut)", null: 0, stagger: 0.1, from: "start"});
 
+//Hero icon
+gsap.from(".scroll-icon", {scrollTrigger: ".scroll-icon", duration: 2, ease: "bounce", y: 50});
 
+//Side-hug image
+gsap.from(".rmt-pic", {scrollTrigger: ".intro", scale: 0.10}, {duration: 1, scale: 3, ease: "expoScale(0.5, 3, power2.inOut)"});
 
-
-gsap.from(".card", {scrollTrigger: ".trigger", scale: 0.10}, {duration: 1, scale: 3, ease: "expoScale(0.5, 3, power2.inOut)"});
-
-
-
-gsap.from(".scroll-icon", {scrollTrigger: "hero", duration: 2, ease: "bounce", y: 50});
-
-
-gsap.from(".rmt-pic", {duration: 2, ease: "bounce", y: 50,  scrollTrigger: ".intro2"});
-
+//Experience progress bars
+var action = gsap.timeline({scrollTrigger: ".progress-bar", repeat:1, yoyo:false, repeatDelay:1, defaults:{duration:1, ease:'none', x: 0, stagger: 0.1, from: "start" }})
+.from('.progress-bar', {width: 100})
+.to('.progress-bar', {scaleX:0, transformOrigin:'right center'},100)
 
 
 
 /*
-
-  $('.card[data-card-id="1"]').hover(
-  function() {
-      TweenMax.to(".zpic", .5, {css: {scaleX: 2.2, scaleY: 2.2},ease: Circ.easeOut});
-  }, function() {
-      TweenMax.to(".zpic", .5, {css: {scaleX: 1, scaleY: 1},ease: Circ.easeOut});
-  });
-
+var action = gsap.timeline({scrollTrigger: ".card", repeat:1, yoyo:false, repeatDelay:1, defaults:{duration:1, ease:'none', null: 0, stagger: 0.1, from: "start" }})
+.from('.card', {width: 100})
+.to('.card', {scaleX:0, transformOrigin:'right center'},100)
+*/
+/*
+//Progress on scroll
+gsap.from(".progress", {
+  scrollTrigger: {
+    trigger: ".progress",
+    scrub: true,
+    start: "top bottom"
+  },
+  scaleX: 0,
+  transformOrigin: "left center", 
+  ease: "none"
+});
 */
 
 
+gsap.from(".title", {scrollTrigger: ".title", scale: 0.10, null: 100, stagger: 0.1}, {duration: 1, scale: 3, ease: "expoScale(0.5, 3, power2.inOut)", x: 0, stagger: 0.1, from: "start"});
 
 
 

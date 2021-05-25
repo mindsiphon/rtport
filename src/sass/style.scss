@@ -58,6 +58,17 @@ body {
 
 .hero{
     background-color: $indigo;
+    background-image: -webkit-linear-gradient(-45deg, #034476 50%, $indigo 50%);    
+}
+
+.darkbg{
+    background-color: $indigo;
+    color: $white;
+}
+
+.lightbg{
+    background-color: $white;
+    color: $black;
 }
 
 .slash {
@@ -65,8 +76,8 @@ body {
 }
 
 .card{
-    height: 400px;
-    width: 400px;
+    max-height: 400px;
+    max-width: 400px;
     position: relative;
     border: none;
     color: $white;
@@ -92,13 +103,38 @@ body {
 
 .card-img-top {
     transition: all 0.5s ease 0s;
-    transform: scale(1);
+    transform: scale(1.5);
 }
 
 
 .card:hover > .card-img-top {
     transition: all 0.5s ease 0s;
-    transform: scale(1.5);
+    transform: scale(2);
 }
 
+.progress-bar {
+    background-color: $progress-bar-bg;
+    border-radius: 10px;
+  }
+
+  .progress {
+    background-color: transparent;
+  }
+
+  a.stretched-link {
+    transition: all 0.5s ease-in-out 0s;    
+    color: $white;
+    text-decoration: none;
+    opacity: 0;
+  }
+
+  a.stretched-link:hover {
+    color: $white;
+    text-decoration: none;
+    opacity: 1;
+}
+
+nav.bg-primary {
+    background-color: rgba(51, 170, 51, .1) ;
+}
 

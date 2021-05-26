@@ -1,10 +1,65 @@
-<footer class="footer container text-center">
-    <p>Rob Thomas Creative</p>
+<footer class="footer darkbg">
+  <div class="py-5 container">
+    <div class="row">
+      <div class="col">
+        <div class="py-2"><a class="navbar-brand fs-5 fw-bold text-uppercase transition" href="index.html">Rob Thomas <span class="slash">Creative</span></a></div>
+        <div class="py-2"><a href="mailto: rob@robthomascreative.com">rob@robthomascreative.com</a></div>
+       <div class="py-2"><a href="tel:6034020510"> (603) 402-0510</a></div>
+       <div class="py-2"><a href="https://www.linkedin.com/in/rob-m-thomas/"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+      </svg></a></div>
+      </div>
+      <div class="col">
+        <div class="fs-6 fw-bold text-uppercase">
+          <a class="mx-2" href="#intro">Intro</a>
+          <a class="mx-2" href="#work">Work</a>
+          <a class="mx-2" href="#experience">Experience</a>
+          <a class="mx-2" href="#contact">Contact</a>
+          <a class="mx-2" href="#"><img src="img/download.svg" class="px-1" style="width: 20px; height: 20px;"> Resume</a>
+        </div>
+
+      </div>
+    </div>
+  </div>  
+  
+
 </footer>
+
+
+
+
+
+
+
+
+
+
+
 <script src="./js/all.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+
+
+<script type="text/javascript">
+
+//page transitions
+  $(document).ready(function() {
+
+   
+      $("body").fadeIn(300);
+   
+      $("a.transition").click(function(event){
+          event.preventDefault();
+          linkLocation = this.href;
+          $("body").fadeOut(300, redirectPage);      
+      });
+           
+      function redirectPage() {
+          window.location = linkLocation;
+      }
+  });
+  </script>
 
 
 <script>
@@ -47,23 +102,21 @@ scrollToHash(window.location.hash);
 gsap.from(".card", {scrollTrigger: ".card", scale: 0.10, null: 100, stagger: 0.1}, {duration: 1, scale: 3, ease: "expoScale(0.5, 3, power2.inOut)", null: 0, stagger: 0.1, from: "start"});
 
 //Hero icon
-gsap.from(".scroll-icon", {scrollTrigger: ".scroll-icon", duration: 2, ease: "bounce", y: 50});
+gsap.from(".scroll-icon", {scrollTrigger: ".scroll-icon", duration: 2, ease: "bounce", y: 100});
 
 //Side-hug image
 gsap.from(".rmt-pic", {scrollTrigger: ".intro", scale: 0.10}, {duration: 1, scale: 3, ease: "expoScale(0.5, 3, power2.inOut)"});
 
-//Experience progress bars
-var action = gsap.timeline({scrollTrigger: ".progress-bar", repeat:1, yoyo:false, repeatDelay:1, defaults:{duration:1, ease:'none', x: 0, stagger: 0.1, from: "start" }})
-.from('.progress-bar', {width: 100})
-.to('.progress-bar', {scaleX:0, transformOrigin:'right center'},100)
 
 
 
 /*
-var action = gsap.timeline({scrollTrigger: ".card", repeat:1, yoyo:false, repeatDelay:1, defaults:{duration:1, ease:'none', null: 0, stagger: 0.1, from: "start" }})
-.from('.card', {width: 100})
-.to('.card', {scaleX:0, transformOrigin:'right center'},100)
+
+var action = gsap.timeline({scrollTrigger: ".progress-bar", repeat:1, yoyo:false, repeatDelay:1, defaults:{duration:1, ease:'none', null: 0, stagger: 0.1, from: "start" }})
+.from('.progress-bar', {width: 100})
+.to('.progress-bar', {scaleX:0, transformOrigin:'right center'},100)
 */
+
 /*
 //Progress on scroll
 gsap.from(".progress", {
@@ -78,13 +131,30 @@ gsap.from(".progress", {
 });
 */
 
-
+//Hero title animation
 gsap.from(".title", {scrollTrigger: ".title", scale: 0.10, null: 100, stagger: 0.1}, {duration: 1, scale: 3, ease: "expoScale(0.5, 3, power2.inOut)", x: 0, stagger: 0.1, from: "start"});
 
 
+//Experience progress bars
 
+const items = document.querySelectorAll(".progress-bar");
+var action = gsap.timeline({scrollTrigger: ".progress-bar", paused:true, 
+defaults:{
+    duration: 1, 
+    ease:Linear.easeNone, 
+    x: items, 
+    stagger: 1, 
+    textContent: 1,
+    snap: { textContent: 5},
+    from: "start"     
+  }
+})
+.from('.progress-bar', {width: 100})
+.to('.progress-bar', {scaleX:0},100)
 
 
 </script>
+
+
 </body>
 </html>

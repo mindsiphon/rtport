@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>download</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1662.000000, -51.000000)" fill="#FFFFFF">
+            <g id="Nav" transform="translate(135.000000, 40.000000)">
+                <g id="Resume" transform="translate(1527.000000, 6.000000)">
+                    <g id="download" transform="translate(0.000000, 5.000000)">
+                        <path d="M10.6945945,0.670642979 L18.2191913,7.93577095 C18.6165058,8.31938491 18.6276122,8.95245247 18.2439983,9.34976693 C18.0555544,9.54494094 17.7958974,9.65517241 17.5245968,9.65517241 L2.47540317,9.65517241 C1.92311842,9.65517241 1.47540317,9.20745716 1.47540317,8.65517241 C1.47540317,8.38387187 1.58563465,8.12421482 1.78080866,7.93577095 L9.30540549,0.670642979 C9.69289871,0.296511593 10.3071013,0.296511593 10.6945945,0.670642979 Z" id="Triangle" transform="translate(10.000000, 4.827586) rotate(-180.000000) translate(-10.000000, -4.827586) "></path>
+                        <rect id="Rectangle" x="0.689655172" y="16.5517241" width="19.3103448" height="3.44827586" rx="1"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

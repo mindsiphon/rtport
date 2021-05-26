@@ -2,8 +2,8 @@
   "name": "rtcreative",
   "version": "1.0.1",
   "description": "rt port",
-  "author": "Sal",
-  "license": "MIT",
+  "author": "Rob",
+  "license": "Other",
   
   "scripts": {
     "start": "gulp",

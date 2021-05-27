@@ -138,8 +138,8 @@ footer a, footer a img
 
   .progress {
     background-color: transparent;
-    height: 1.5rem;
-    font-size: 1rem;
+    height: 1rem;
+    font-size: .75rem;
     font-weight: bold;
     color: #000000;
   }
@@ -159,7 +159,6 @@ footer a, footer a img
 
 nav.bg-primary {
     background-color: rgba(51, 170, 51, .1) ;
-
 }
 
 footer a, footer a:hover{
@@ -199,3 +198,37 @@ footer a, footer a:hover{
   animation-name: bounce;
 }
 
+
+
+
+@media only screen and (hover: none) and (pointer: coarse){
+
+    .card-body {
+        transition: none;
+        background-color: rgba(0, 0, 0, .5);
+        visibility: visible;
+    }
+    a.stretched-link {
+        transition: none;    
+        opacity: 1;
+        display: block;
+        padding: 10px;
+      }
+  }
+
+
+
+@media screen and (max-width:640px) {
+  
+    .card-body {
+        transition: none;
+        background-color: rgba(0, 0, 0, .5);
+        visibility: visible;
+    }
+    a.stretched-link {
+        transition: none;    
+        opacity: 1;
+        display: block;
+        padding: 10px;
+      }
+  }

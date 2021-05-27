@@ -60,6 +60,7 @@ function files() {
         .pipe(gulp.dest('docs/files/'));
 }
 
+
 function serve() {
     browserSync.init({
         open: true,

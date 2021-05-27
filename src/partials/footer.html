@@ -41,25 +41,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
 
 
-<script type="text/javascript">
 
-//page transitions
-  $(document).ready(function() {
-
-   
-      $("body").fadeIn(300);
-   
-      $("a.transition").click(function(event){
-          event.preventDefault();
-          linkLocation = this.href;
-          $("body").fadeOut(300, redirectPage);      
-      });
-           
-      function redirectPage() {
-          window.location = linkLocation;
-      }
-  });
-  </script>
 
 
 <script>
@@ -137,23 +119,38 @@ gsap.from(".title", {scrollTrigger: ".title", scale: 0.10, null: 100, stagger: 0
 
 //Experience progress bars
 
-const items = document.querySelectorAll(".progress-bar");
-var action = gsap.timeline({scrollTrigger: ".progress-bar", paused:true, 
-defaults:{
-    duration: 1, 
-    ease:Linear.easeNone, 
-    x: items, 
-    stagger: 1, 
-    textContent: 1,
-    snap: { textContent: 5},
-    from: "start"     
-  }
+//const items = document.querySelectorAll(".progress-bar");
+
+
+var ndata = gsap.getProperty(".progress-bar", 'aria-valuemax');
+
+var action = gsap.timeline({
+  
+  scrollTrigger: ".progress-bar", 
+  toggleActions: "restart pause reverse pause",
+  onLeaveBack: self => self.disable(),
+  defaults:{
+      delay: 0.5,
+      duration: 0.5, 
+      ease:'none', 
+      x: 0,     
+      null: 0,
+      stagger: 0.2, 
+      textContent: 5,
+      snap: { textContent: 5},
+      from: "start"     
+    }
 })
+
+
+
 .from('.progress-bar', {width: 100})
-.to('.progress-bar', {scaleX:0},100)
+.to('.progress-bar', {scaleX:0},100,)
 
 
 </script>
+
+
 
 
 </body>

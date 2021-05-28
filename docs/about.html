@@ -54,7 +54,7 @@
             </div>
         </div>
         <footer class="footer darkbg">
-            <div class="py-5 container">
+            <div class="py-5 container" id="contact">
                 <div class="row">
                     <div class="col">
                         <div class="py-2"><a class="navbar-brand fs-5 fw-bold text-uppercase transition" href="index.html">Rob Thomas <span class="slash">Creative</span></a>
@@ -220,32 +220,6 @@
               ease: "none"
             });
             */
-        </script>
-        <script>
-            //get the form by its id
-            const form = document.getElementById("contact"); 
-            
-            //1.
-            const formEvent = form.addEventListener("submit", (event) => {
-              event.preventDefault();
-            
-              //2.
-              let mail = new FormData(form);
-            
-              //3.
-              sendMail(mail);
-            })
-            
-            const sendMail = (mail) => {
-              //1.
-              fetch("https://robthomascreative.com", {
-                method: "post", //2.
-                body: mail, //3.
-            
-              }).then((response) => {
-                return response.json();
-              });
-            };
         </script>
     </body>
 

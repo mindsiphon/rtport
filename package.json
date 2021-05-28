@@ -4,7 +4,6 @@
   "description": "rt port",
   "author": "Rob",
   "license": "Other",
-  
   "scripts": {
     "start": "gulp",
     "dev": "gulp serve",
@@ -27,7 +26,6 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2"
   },
-
   "main": "gulpfile.js",
   "directories": {
     "doc": "docs"

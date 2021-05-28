@@ -33,40 +33,43 @@
                     </div>
             </div>
         </nav>
+        <div class="fs-1 text-end py-1 px-5"><a href="index.html#work" class="transition"><svg  xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x-lg text-primary" viewBox="0 0 16 16">
+    <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+  </svg></a>
+
+        </div>
         <main>
             <section id="intro">
                 <div class="py-3 my-3 container-xxl intro">
                     <div class="row mx-auto align-items-center d-flex justify-content-center">
                         <div class="col-md-6 p-3">
-                            <img class="mx-auto p-3 d-block img-fluid" src="img/bh-concepts-iso.png">
+                            <img class="mx-auto p-3 d-block img-fluid" src="img/rebrand-flat.jpg">
                         </div>
                         <div class="col-md-6 p3">
-                             <h2 class="display-6 fw-bold py-4">Bluehost redesign concepts</h2>
+                             <h2 class="display-6 fw-bold py-4">Bluehost Rebrand</h2>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Component, design system and styleguide rebrand for Bluehost.</p>
                         </div>
                     </div>
                 </div>
             </section>
             <section id="examples" class="">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-4 px-5 mx-5">
                         <div class="col py-3">
-                            <img src="img/bh-concept-1.jpg" class="img-fluid mx-auto d-block" alt="">
+                            <img src="img/dedicated-hosting.jpg" class="img-fluid mx-auto d-block shadow"
+                            alt="">
                         </div>
                         <div class="col py-3">
-                            <img src="img/bh-concept-2.jpg" class="img-fluid mx-auto d-block" alt="">
+                            <img src="img/wp-hosting.jpg" class="img-fluid mx-auto d-block shadow"
+                            alt="">
                         </div>
                         <div class="col py-3">
-                            <img src="img/bh-concept-3.jpg" class="img-fluid mx-auto d-block" alt="">
+                            <img src="img/wp-hosting-category.jpg" class="img-fluid mx-auto d-block shadow"
+                            alt="">
                         </div>
                         <div class="col py-3">
-                            <img src="img/bh-concept-4.jpg" class="img-fluid mx-auto d-block" alt="">
+                            <img src="img/ecomm-d.jpg" class="img-fluid mx-auto d-block shadow" alt="">
                         </div>
                     </div>
                 </div>
@@ -185,7 +188,7 @@
             
             //const items = document.querySelectorAll(".progress-bar");
             
-            
+            /*
             var ndata = gsap.getProperty(".progress-bar", 'aria-valuemax');
             
             var action = gsap.timeline({
@@ -206,10 +209,65 @@
                 }
             })
             
-            
-            
             .from('.progress-bar', {width: 100})
             .to('.progress-bar', {scaleX:0},100,)
+            
+            */
+            
+            const items = document.querySelectorAll(".progress-bar");
+            
+            var action = gsap.timeline({
+              scrollTrigger: ".progress-bar", 
+              repeat:0, 
+              paused: true,
+              yoyo:false, 
+              repeatDelay:1, 
+              defaults:{duration:1, ease:'none', null: 0, stagger: 0.1, stagger: 0.2, from: "start" }})
+            
+            .from('.progress-bar', {width: 0})
+            .to('.progress-bar', {width:items, transformOrigin:'left'},100)
+            
+            
+            
+            /*
+            //Progress on scroll
+            gsap.from(".progress", {
+              scrollTrigger: {
+                trigger: ".progress",
+                scrub: true,
+                start: "top bottom"
+              },
+              scaleX: 0,
+              transformOrigin: "left center", 
+              ease: "none"
+            });
+            */
+        </script>
+        <script>
+            //get the form by its id
+            const form = document.getElementById("contact"); 
+            
+            //1.
+            const formEvent = form.addEventListener("submit", (event) => {
+              event.preventDefault();
+            
+              //2.
+              let mail = new FormData(form);
+            
+              //3.
+              sendMail(mail);
+            })
+            
+            const sendMail = (mail) => {
+              //1.
+              fetch("https://robthomascreative.com", {
+                method: "post", //2.
+                body: mail, //3.
+            
+              }).then((response) => {
+                return response.json();
+              });
+            };
         </script>
     </body>
 

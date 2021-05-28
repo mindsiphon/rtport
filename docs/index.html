@@ -102,11 +102,10 @@
                         </div>
                     </div>
                     <div class="row row-cols-1 gx-5 cases gap-3 d-flex justify-content-center">
-                        <div class="col card pic" id="pic">
-                            <img src="img/case-bh-concepts.jpg" class="card-img-top zpic" alt="card-img-top"
-                            id="zpic">
+                        <div class="col card pic">
+                            <img src="img/case-bh-rebrand.jpg" class="card-img-top zpic" alt="card-img-top">
                             <div class="card-body text-center align-items-center d-flex justify-content-center p5">
-                                 <h5 class="card-title fs-4"><a href="case1.html" class="stretched-link transition">Bluehost Redesign Concepts</a></h5>
+                                 <h5 class="card-title fs-4"><a href="case6.html" class="stretched-link">Bluehost Rebrand</a></h5>
 
                             </div>
                         </div>
@@ -124,6 +123,14 @@
 
                             </div>
                         </div>
+                        <div class="col card pic" id="pic">
+                            <img src="img/case-bh-concepts.jpg" class="card-img-top zpic" alt="card-img-top"
+                            id="zpic">
+                            <div class="card-body text-center align-items-center d-flex justify-content-center p5">
+                                 <h5 class="card-title fs-4"><a href="case1.html" class="stretched-link transition">Bluehost Redesign Concepts</a></h5>
+
+                            </div>
+                        </div>
                         <div class="col card pic">
                             <img src="img/case-bluetopia.jpg" class="card-img-top zpic" alt="card-img-top">
                             <div class="card-body text-center align-items-center d-flex justify-content-center p5">
@@ -135,13 +142,6 @@
                             <img src="img/case-hdash.jpg" class="card-img-top zpic" alt="card-img-top">
                             <div class="card-body text-center align-items-center d-flex justify-content-center p5">
                                  <h5 class="card-title fs-4"><a href="case5.html" class="stretched-link">Holiday Dash</a></h5>
-
-                            </div>
-                        </div>
-                        <div class="col card pic">
-                            <img src="img/case-bh-concepts.jpg" class="card-img-top zpic" alt="card-img-top">
-                            <div class="card-body text-center align-items-center d-flex justify-content-center p5">
-                                 <h5 class="card-title fs-4"><a href="case6.html" class="stretched-link">Card title</a></h5>
 
                             </div>
                         </div>
@@ -377,7 +377,7 @@ Sorry there was an error sending your form.</div>
             
             //const items = document.querySelectorAll(".progress-bar");
             
-            
+            /*
             var ndata = gsap.getProperty(".progress-bar", 'aria-valuemax');
             
             var action = gsap.timeline({
@@ -398,10 +398,65 @@ Sorry there was an error sending your form.</div>
                 }
             })
             
-            
-            
             .from('.progress-bar', {width: 100})
             .to('.progress-bar', {scaleX:0},100,)
+            
+            */
+            
+            const items = document.querySelectorAll(".progress-bar");
+            
+            var action = gsap.timeline({
+              scrollTrigger: ".progress-bar", 
+              repeat:0, 
+              paused: true,
+              yoyo:false, 
+              repeatDelay:1, 
+              defaults:{duration:1, ease:'none', null: 0, stagger: 0.1, stagger: 0.2, from: "start" }})
+            
+            .from('.progress-bar', {width: 0})
+            .to('.progress-bar', {width:items, transformOrigin:'left'},100)
+            
+            
+            
+            /*
+            //Progress on scroll
+            gsap.from(".progress", {
+              scrollTrigger: {
+                trigger: ".progress",
+                scrub: true,
+                start: "top bottom"
+              },
+              scaleX: 0,
+              transformOrigin: "left center", 
+              ease: "none"
+            });
+            */
+        </script>
+        <script>
+            //get the form by its id
+            const form = document.getElementById("contact"); 
+            
+            //1.
+            const formEvent = form.addEventListener("submit", (event) => {
+              event.preventDefault();
+            
+              //2.
+              let mail = new FormData(form);
+            
+              //3.
+              sendMail(mail);
+            })
+            
+            const sendMail = (mail) => {
+              //1.
+              fetch("https://robthomascreative.com", {
+                method: "post", //2.
+                body: mail, //3.
+            
+              }).then((response) => {
+                return response.json();
+              });
+            };
         </script>
     </body>
 

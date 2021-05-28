@@ -121,7 +121,7 @@ gsap.from(".title", {scrollTrigger: ".title", scale: 0.10, null: 100, stagger: 0
 
 //const items = document.querySelectorAll(".progress-bar");
 
-
+/*
 var ndata = gsap.getProperty(".progress-bar", 'aria-valuemax');
 
 var action = gsap.timeline({
@@ -142,15 +142,69 @@ var action = gsap.timeline({
     }
 })
 
-
-
 .from('.progress-bar', {width: 100})
 .to('.progress-bar', {scaleX:0},100,)
 
+*/
 
+const items = document.querySelectorAll(".progress-bar");
+
+var action = gsap.timeline({
+  scrollTrigger: ".progress-bar", 
+  repeat:0, 
+  paused: true,
+  yoyo:false, 
+  repeatDelay:1, 
+  defaults:{duration:1, ease:'none', null: 0, stagger: 0.1, stagger: 0.2, from: "start" }})
+
+.from('.progress-bar', {width: 0})
+.to('.progress-bar', {width:items, transformOrigin:'left'},100)
+
+
+
+/*
+//Progress on scroll
+gsap.from(".progress", {
+  scrollTrigger: {
+    trigger: ".progress",
+    scrub: true,
+    start: "top bottom"
+  },
+  scaleX: 0,
+  transformOrigin: "left center", 
+  ease: "none"
+});
+*/
 </script>
 
+<script>
+//get the form by its id
+const form = document.getElementById("contact"); 
 
+//1.
+const formEvent = form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  //2.
+  let mail = new FormData(form);
+
+  //3.
+  sendMail(mail);
+})
+
+const sendMail = (mail) => {
+  //1.
+  fetch("https://robthomascreative.com", {
+    method: "post", //2.
+    body: mail, //3.
+
+  }).then((response) => {
+    return response.json();
+  });
+};
+
+
+</script>
 
 
 </body>

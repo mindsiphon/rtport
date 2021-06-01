@@ -8,7 +8,7 @@
             <div class="col-md-6 p-3"><img class="mx-auto p-3 d-block img-fluid" src="img/rebrand-flat.jpg"></div>  
             <div class="col-md-6 p3">
               <h2 class="display-6 fw-bold py-4">Bluehost Rebrand</h2>
-              <p>Component, design system and styleguide rebrand for Bluehost.</p>
+              <p class="lead">Component, design system and styleguide rebrand for Bluehost.</p>
             </div>
 
         </div>
@@ -24,19 +24,25 @@
             
         
             <div class="col py-3">
-                <img src="img/dedicated-hosting.jpg" class="img-fluid mx-auto d-block shadow" alt="">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modal-1" id="btnShow"><img src="img/dedicated-hosting.jpg" class="img-fluid mx-auto d-block shadow" alt=""></a>
             </div>
         
-            <div class="col py-3">          
+            <div class="col py-3">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modal-2" id="btnShow">          
                 <img src="img/wp-hosting.jpg" class="img-fluid mx-auto d-block shadow" alt="">
+              </a>
             </div>
         
-            <div class="col py-3">          
+            <div class="col py-3">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modal-3" id="btnShow">           
                 <img src="img/wp-hosting-category.jpg" class="img-fluid mx-auto d-block shadow" alt="">
+                </a>
             </div>
         
-            <div class="col py-3">          
+            <div class="col py-3">    
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modal-4" id="btnShow">       
                 <img src="img/ecomm-d.jpg" class="img-fluid mx-auto d-block shadow" alt="">
+                </a>
             </div>
         
         
@@ -45,9 +51,80 @@
         </div>
         </section>
 
+<!-- Modal -->
+<div class="modal fade modal-dialog-scrollable" id="modal-1" tabindex="1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Dedicated Hosting</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="img/dedicated-hosting.jpg" class="img-fluid mx-auto d-block" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary" data-bs-target="#modal-2" data-bs-toggle="modal" data-bs-dismiss="modal">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<div class="modal fade modal-dialog-scrollable" id="modal-2" tabindex="2" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Wordpress Hosting</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="img/wp-hosting.jpg" class="img-fluid mx-auto d-block" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary" data-bs-target="#modal-3" data-bs-toggle="modal" data-bs-dismiss="modal">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+<div class="modal fade modal-dialog-scrollable" id="modal-3" tabindex="3" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Wordpress Category Landing Page</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="img/wp-hosting-category.jpg" class="img-fluid mx-auto d-block" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary" data-bs-target="#modal-4" data-bs-toggle="modal" data-bs-dismiss="modal">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-dialog-scrollable" id="modal-4" tabindex="4" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">E-Commerce</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="img/ecomm-d.jpg" class="img-fluid mx-auto d-block" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary" data-bs-target="#modal-1" data-bs-toggle="modal" data-bs-dismiss="modal">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </main>
 

@@ -4,17 +4,8 @@ $theme-colors: (
 );
 
 
-// scss-docs-start color-variables
-$blue:    #0d6efd;
 $indigo:  #043357;
-$purple:  #6f42c1;
-$pink:    #d63384;
-$red:     #dc3545;
-$orange:  #fd7e14;
-$yellow:  #ffc107;
-$green:   #198754;
-$teal:    #20c997;
-$cyan:    #30BEFF;
+
 
 $font-family-sans-serif: "Red Hat Display";
 
@@ -69,6 +60,16 @@ footer a, footer a img
  {
     opacity: 0.8;
 }
+
+div.modal {
+    overflow: auto;
+  }
+
+
+.modal-dialog-scrollable {
+    overflow-y:auto;
+  }
+
 
 .footer {
     margin-top:3rem;
@@ -167,6 +168,7 @@ footer a, footer a:hover{
 }
 
 
+
 @keyframes bounce {
 	0%, 100%, 20%, 50%, 80% {
 		-webkit-transform: translateY(0);
@@ -197,6 +199,8 @@ footer a, footer a:hover{
   cursor: pointer;
   animation-name: bounce;
 }
+
+
 
 
 
@@ -232,3 +236,6 @@ footer a, footer a:hover{
         padding: 10px;
       }
   }
+
+
+  
